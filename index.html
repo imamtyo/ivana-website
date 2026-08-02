@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="IVANA menyediakan layanan konsultasi proyek ketenagalistrikan, analisis RUPTL, studi pengembangan proyek energi, dan advisory bisnis di Indonesia." />
+  <meta name="keywords" content="IVANA, konsultasi RUPTL, konsultan energi, proyek ketenagalistrikan, renewable energy, Indonesia, Jakarta" />
+  <meta name="author" content="IVANA" />
+  <meta property="og:title" content="IVANA — Energy Project & RUPTL Advisory" />
+  <meta property="og:description" content="Layanan konsultasi RUPTL, pengembangan proyek ketenagalistrikan, dan advisory energi di Indonesia." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#0f172a" />
+  <title>IVANA — Energy Project & RUPTL Advisory</title>
+
+  <style>
+    :root{
+      --bg:#f8fafc;
+      --surface:#ffffff;
+      --surface-2:#f1f5f9;
+      --text:#0f172a;
+      --muted:#64748b;
+      --line:#e2e8f0;
+      --primary:#0f766e;
+      --primary-2:#14b8a6;
+      --accent:#0ea5e9;
+      --shadow:0 20px 55px rgba(15,23,42,.10);
+      --radius:22px;
+      --max:1180px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.65;
+    }
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{width:min(calc(100% - 36px),var(--max));margin-inline:auto}
+
+    .topbar{
+      background:#0b1220;
+      color:#cbd5e1;
+      font-size:13px;
+    }
+    .topbar .container{
+      min-height:40px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+      flex-wrap:wrap;
+    }
+    .topbar a:hover{color:#fff}
+
+    header{
+      position:sticky;
+      top:0;
+      z-index:50;
+      backdrop-filter:blur(14px);
+      background:rgba(248,250,252,.90);
+      border-bottom:1px solid rgba(226,232,240,.85);
+    }
+    nav{
+      height:74px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:24px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      font-weight:800;
+      letter-spacing:.02em;
+    }
+    .brand-mark{
+      width:42px;height:42px;border-radius:13px;
+      display:grid;place-items:center;
+      color:#fff;
+      background:linear-gradient(135deg,var(--primary),var(--accent));
+      box-shadow:0 10px 25px rgba(14,116,144,.22);
+    }
+    .brand small{
+      display:block;
+      color:var(--muted);
+      font-size:10px;
+      font-weight:700;
+      letter-spacing:.12em;
+      margin-top:-2px;
+    }
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:24px;
+      color:#334155;
+      font-size:14px;
+      font-weight:600;
+    }
+    .nav-links a:hover{color:var(--primary)}
+    .btn{
+      border:none;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:12px 18px;
+      border-radius:13px;
+      font-weight:700;
+      cursor:pointer;
+      transition:.2s ease;
+    }
+    .btn-primary{
+      color:white;
+      background:linear-gradient(135deg,var(--primary),#0d9488);
+      box-shadow:0 10px 28px rgba(15,118,110,.18);
+    }
+    .btn-primary:hover{transform:translateY(-1px);box-shadow:0 14px 30px rgba(15,118,110,.24)}
+    .btn-secondary{
+      background:#fff;
+      color:#0f172a;
+      border:1px solid var(--line);
+    }
+    .btn-secondary:hover{border-color:#cbd5e1;background:#f8fafc}
+
+    .hero{
+      overflow:hidden;
+      position:relative;
+      padding:92px 0 78px;
+      background:
+        radial-gradient(circle at 12% 8%, rgba(20,184,166,.16), transparent 30%),
+        radial-gradient(circle at 88% 20%, rgba(14,165,233,.16), transparent 25%),
+        linear-gradient(180deg,#fff 0%,#f8fafc 100%);
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:60px;
+      align-items:center;
+    }
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:7px 11px;
+      border-radius:999px;
+      color:#0f766e;
+      background:#ccfbf1;
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      margin-bottom:20px;
+    }
+    h1{
+      margin:0;
+      font-size:clamp(42px,6vw,72px);
+      line-height:1.04;
+      letter-spacing:-.045em;
+      max-width:800px;
+    }
+    .hero p{
+      color:#475569;
+      font-size:18px;
+      max-width:720px;
+      margin:24px 0 30px;
+    }
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+    .hero-proof{
+      display:flex;
+      gap:24px;
+      flex-wrap:wrap;
+      margin-top:34px;
+      color:#475569;
+      font-size:13px;
+      font-weight:650;
+    }
+    .hero-proof span{display:flex;align-items:center;gap:8px}
+
+    .visual{
+      position:relative;
+      min-height:470px;
+      border-radius:30px;
+      background:
+        linear-gradient(155deg,rgba(15,118,110,.96),rgba(15,23,42,.98)),
+        #0f172a;
+      box-shadow:var(--shadow);
+      overflow:hidden;
+      padding:34px;
+      color:white;
+    }
+    .grid-overlay{
+      position:absolute;inset:0;opacity:.25;
+      background-image:
+        linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.08) 1px, transparent 1px);
+      background-size:38px 38px;
+      mask-image:linear-gradient(to bottom,black,transparent);
+    }
+    .visual-content{position:relative;z-index:2}
+    .visual h3{font-size:25px;margin:2px 0 8px}
+    .visual p{color:#cbd5e1;font-size:14px;margin:0 0 28px}
+    .mini-card{
+      background:rgba(255,255,255,.09);
+      border:1px solid rgba(255,255,255,.14);
+      border-radius:18px;
+      padding:18px;
+      margin-top:14px;
+      backdrop-filter:blur(8px);
+    }
+    .mini-label{font-size:11px;color:#99f6e4;text-transform:uppercase;letter-spacing:.12em;font-weight:800}
+    .mini-value{font-size:18px;font-weight:800;margin-top:4px}
+    .timeline{margin-top:25px;display:grid;gap:15px}
+    .timeline div{display:flex;align-items:center;gap:12px;color:#e2e8f0;font-size:13px}
+    .dot{width:10px;height:10px;border-radius:50%;background:#5eead4;box-shadow:0 0 0 6px rgba(94,234,212,.09)}
+
+    section{padding:82px 0}
+    .section-head{
+      max-width:760px;
+      margin-bottom:38px;
+    }
+    .section-head h2{
+      margin:8px 0 10px;
+      font-size:clamp(31px,4vw,44px);
+      line-height:1.12;
+      letter-spacing:-.03em;
+    }
+    .section-head p{color:var(--muted);font-size:16px;margin:0}
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+    .card{
+      background:var(--surface);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:26px;
+      transition:.22s ease;
+    }
+    .card:hover{transform:translateY(-3px);box-shadow:0 15px 35px rgba(15,23,42,.07)}
+    .icon{
+      width:44px;height:44px;border-radius:13px;
+      display:grid;place-items:center;
+      background:#ecfeff;color:#0f766e;
+      font-size:22px;
+    }
+    .card h3{font-size:18px;margin:16px 0 8px}
+    .card p{font-size:14px;color:var(--muted);margin:0}
+
+    .about{background:#0f172a;color:white}
+    .about-grid{
+      display:grid;
+      grid-template-columns:.9fr 1.1fr;
+      gap:70px;
+      align-items:start;
+    }
+    .about .section-head p,.about p{color:#cbd5e1}
+    .stats{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:14px;
+    }
+    .stat{
+      padding:23px;
+      border-radius:18px;
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.11);
+    }
+    .stat strong{display:block;font-size:20px;margin-bottom:3px}
+    .stat span{color:#94a3b8;font-size:13px}
+
+    .process{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:16px;
+      counter-reset:step;
+    }
+    .step{
+      position:relative;
+      background:white;border:1px solid var(--line);border-radius:18px;padding:23px;
+    }
+    .step:before{
+      counter-increment:step;
+      content:"0" counter(step);
+      display:block;
+      color:var(--primary);
+      font-size:12px;
+      font-weight:900;
+      letter-spacing:.08em;
+      margin-bottom:18px;
+    }
+    .step strong{display:block;font-size:16px;margin-bottom:7px}
+    .step span{font-size:13px;color:var(--muted)}
+
+    .cta-wrap{
+      background:linear-gradient(135deg,#0f766e,#0f172a);
+      border-radius:30px;
+      padding:46px;
+      color:white;
+      display:grid;
+      grid-template-columns:1fr auto;
+      align-items:center;
+      gap:30px;
+      box-shadow:var(--shadow);
+    }
+    .cta-wrap h2{font-size:34px;line-height:1.15;margin:0 0 10px}
+    .cta-wrap p{margin:0;color:#cbd5e1;max-width:740px}
+    .cta-wrap .btn{background:white;color:#0f172a}
+
+    .contact-grid{
+      display:grid;
+      grid-template-columns:.9fr 1.1fr;
+      gap:30px;
+    }
+    .contact-box{
+      background:white;
+      border:1px solid var(--line);
+      border-radius:22px;
+      padding:28px;
+    }
+    .contact-list{display:grid;gap:18px;margin-top:22px}
+    .contact-item{
+      display:grid;
+      grid-template-columns:42px 1fr;
+      gap:13px;
+      align-items:start;
+    }
+    .contact-item .ci{
+      width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:#f0fdfa;color:#0f766e;
+    }
+    .contact-item strong{display:block;font-size:14px}
+    .contact-item span,.contact-item a{font-size:14px;color:var(--muted)}
+
+    .faq{display:grid;gap:12px}
+    details{
+      background:white;border:1px solid var(--line);border-radius:15px;padding:17px 18px;
+    }
+    summary{cursor:pointer;font-weight:750;color:#1e293b}
+    details p{font-size:14px;color:var(--muted);margin:10px 0 0}
+
+    .legal{
+      background:#fff;
+      border-top:1px solid var(--line);
+    }
+    .legal-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:22px;
+    }
+    .legal-card{
+      background:#f8fafc;
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:25px;
+    }
+    .legal-card h3{margin-top:0}
+    .legal-card p,.legal-card li{font-size:13px;color:#64748b}
+
+    footer{
+      background:#0b1220;
+      color:#94a3b8;
+      padding:38px 0;
+      font-size:13px;
+    }
+    .footer-grid{
+      display:flex;justify-content:space-between;gap:30px;align-items:flex-start;flex-wrap:wrap;
+    }
+    footer strong{color:#fff}
+    .footer-links{display:flex;gap:18px;flex-wrap:wrap}
+    footer a:hover{color:#fff}
+
+    .wa-float{
+      position:fixed;right:20px;bottom:20px;z-index:70;
+      width:58px;height:58px;border-radius:50%;
+      display:grid;place-items:center;
+      background:#22c55e;color:white;font-size:26px;
+      box-shadow:0 12px 35px rgba(34,197,94,.35);
+      border:3px solid rgba(255,255,255,.9);
+    }
+
+    .mobile-toggle{display:none;background:none;border:none;font-size:24px}
+    @media(max-width:920px){
+      .hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}
+      .hero{padding-top:65px}
+      .visual{min-height:400px}
+      .cards{grid-template-columns:1fr 1fr}
+      .process{grid-template-columns:1fr 1fr}
+      .cta-wrap{grid-template-columns:1fr}
+      .nav-links{
+        position:absolute;left:18px;right:18px;top:80px;
+        display:none;flex-direction:column;align-items:stretch;
+        padding:18px;background:white;border:1px solid var(--line);border-radius:16px;
+        box-shadow:var(--shadow)
+      }
+      .nav-links.open{display:flex}
+      .mobile-toggle{display:block}
+    }
+    @media(max-width:620px){
+      .topbar .container{padding:8px 0}
+      nav{height:66px}
+      h1{font-size:42px}
+      .hero p{font-size:16px}
+      .cards,.stats,.process,.legal-grid{grid-template-columns:1fr}
+      .cta-wrap{padding:30px 24px}
+      .visual{padding:24px}
+      section{padding:65px 0}
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="container">
+      <span>Energy Project & RUPTL Advisory — Indonesia</span>
+      <a href="https://wa.me/628987587313" target="_blank" rel="noopener">WhatsApp: +62 898-7587-313</a>
+    </div>
+  </div>
+
+  <header>
+    <div class="container">
+      <nav>
+        <a class="brand" href="#home" aria-label="IVANA Home">
+          <span class="brand-mark">
+            <svg width="23" height="23" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M4 18.5L8.5 6l3.3 8.1L15 8l5 10.5" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M5 18.5h14" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <span>IVANA<small>ENERGY ADVISORY</small></span>
+        </a>
+
+        <button class="mobile-toggle" aria-label="Buka menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+
+        <div class="nav-links">
+          <a href="#layanan">Layanan</a>
+          <a href="#tentang">Tentang</a>
+          <a href="#proses">Proses Kerja</a>
+          <a href="#kontak">Kontak</a>
+          <a class="btn btn-primary" href="https://wa.me/628987587313?text=Halo%20IVANA%2C%20saya%20ingin%20berkonsultasi%20mengenai%20proyek%20energi." target="_blank" rel="noopener">Konsultasi WhatsApp</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Energy • Infrastructure • Advisory</div>
+          <h1>Mendukung keputusan proyek energi yang lebih terarah.</h1>
+          <p>
+            IVANA menyediakan layanan konsultasi untuk pengembangan proyek ketenagalistrikan,
+            analisis RUPTL, renewable energy, studi awal proyek, serta advisory bisnis untuk
+            membantu pemilik proyek dan pengembang mengambil keputusan berbasis data.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://wa.me/628987587313?text=Halo%20IVANA%2C%20saya%20ingin%20berdiskusi%20tentang%20konsultasi%20proyek%20RUPTL." target="_blank" rel="noopener">Hubungi via WhatsApp</a>
+            <a class="btn btn-secondary" href="#layanan">Lihat Layanan</a>
+          </div>
+          <div class="hero-proof">
+            <span>✓ Fokus sektor energi Indonesia</span>
+            <span>✓ Pendekatan berbasis data</span>
+            <span>✓ Konsultasi fleksibel</span>
+          </div>
+        </div>
+
+        <div class="visual" aria-label="Ilustrasi layanan konsultasi IVANA">
+          <div class="grid-overlay"></div>
+          <div class="visual-content">
+            <div class="mini-label">IVANA Advisory Framework</div>
+            <h3>Project Screening to Development</h3>
+            <p>Analisis awal untuk membantu menentukan kelayakan, prioritas, dan strategi pengembangan proyek.</p>
+
+            <div class="mini-card">
+              <div class="mini-label">RUPTL & Market Review</div>
+              <div class="mini-value">Project Positioning & Opportunity Mapping</div>
+            </div>
+            <div class="mini-card">
+              <div class="mini-label">Technical & Commercial</div>
+              <div class="mini-value">Preliminary Assessment</div>
+            </div>
+            <div class="timeline">
+              <div><span class="dot"></span>Screening peluang dan kebutuhan proyek</div>
+              <div><span class="dot"></span>Analisis data teknis dan pasar</div>
+              <div><span class="dot"></span>Strategi pengembangan dan rekomendasi</div>
+              <div><span class="dot"></span>Pendampingan tindak lanjut proyek</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="layanan">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Layanan Kami</div>
+          <h2>Konsultasi untuk pengembangan proyek ketenagalistrikan.</h2>
+          <p>Layanan dapat disesuaikan dengan tahap pengembangan proyek, mulai dari penjajakan peluang hingga analisis teknis dan komersial awal.</p>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <div class="icon">⚡</div>
+            <h3>Konsultasi RUPTL</h3>
+            <p>Review kebutuhan sistem, peluang proyek, lokasi, jenis pembangkit, jadwal pengembangan, dan positioning proyek terhadap rencana ketenagalistrikan.</p>
+          </article>
+
+          <article class="card">
+            <div class="icon">🗺️</div>
+            <h3>Project Site Screening</h3>
+            <p>Screening awal lokasi proyek menggunakan data spasial, kondisi akses, infrastruktur kelistrikan, lingkungan sekitar, dan parameter teknis relevan.</p>
+          </article>
+
+          <article class="card">
+            <div class="icon">☀️</div>
+            <h3>Renewable Energy Assessment</h3>
+            <p>Analisis awal potensi PLTS, PLTB, PLTA/PLTM, hybrid system, dan opsi energy storage untuk mendukung studi pengembangan proyek.</p>
+          </article>
+
+          <article class="card">
+            <div class="icon">📊</div>
+            <h3>Pre-Feasibility Support</h3>
+            <p>Penyusunan asumsi dasar, estimasi produksi energi, kebutuhan kapasitas, risiko utama, dan indikator finansial awal sebelum studi lebih rinci.</p>
+          </article>
+
+          <article class="card">
+            <div class="icon">🏗️</div>
+            <h3>Project Development Advisory</h3>
+            <p>Pendampingan strategi pengembangan, penyusunan roadmap, evaluasi alternatif, koordinasi kebutuhan studi, dan persiapan bahan diskusi dengan stakeholder.</p>
+          </article>
+
+          <article class="card">
+            <div class="icon">🤝</div>
+            <h3>Business & Strategic Advisory</h3>
+            <p>Market intelligence, partner screening, opportunity assessment, business case, dan advisory komersial untuk proyek energi dan infrastruktur.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="tentang">
+      <div class="container about-grid">
+        <div class="section-head">
+          <div class="eyebrow">Tentang IVANA</div>
+          <h2>Partner analisis untuk peluang energi dan infrastruktur.</h2>
+          <p>
+            IVANA adalah penyedia layanan advisory yang berfokus pada analisis awal,
+            penyusunan strategi, dan dukungan pengambilan keputusan untuk proyek
+            ketenagalistrikan dan energi di Indonesia.
+          </p>
+        </div>
+
+        <div>
+          <p>
+            Kami membantu klien menggabungkan perspektif teknis, komersial, spasial,
+            dan pasar sehingga proses identifikasi peluang dapat dilakukan lebih cepat
+            dan terstruktur. Ruang lingkup pekerjaan dapat disesuaikan mulai dari
+            konsultasi singkat, desktop study, hingga penyusunan analisis proyek.
+          </p>
+          <div class="stats">
+            <div class="stat">
+              <strong>RUPTL</strong>
+              <span>Analisis peluang & kebutuhan proyek</span>
+            </div>
+            <div class="stat">
+              <strong>Geospatial</strong>
+              <span>Screening dan analisis lokasi</span>
+            </div>
+            <div class="stat">
+              <strong>Renewables</strong>
+              <span>Solar, wind, hydro & storage</span>
+            </div>
+            <div class="stat">
+              <strong>Advisory</strong>
+              <span>Technical & commercial support</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="proses">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Cara Kerja</div>
+          <h2>Proses konsultasi yang ringkas dan transparan.</h2>
+          <p>Setiap pekerjaan dimulai dari pemahaman kebutuhan, ruang lingkup, dan ketersediaan data sebelum analisis dilakukan.</p>
+        </div>
+
+        <div class="process">
+          <div class="step"><strong>Diskusi Awal</strong><span>Memahami tujuan proyek, lokasi, kapasitas, teknologi, dan kebutuhan analisis.</span></div>
+          <div class="step"><strong>Data & Screening</strong><span>Mengumpulkan serta meninjau data publik, data klien, dan parameter proyek.</span></div>
+          <div class="step"><strong>Analisis</strong><span>Menyusun assessment teknis, pasar, risiko, dan alternatif pengembangan.</span></div>
+          <div class="step"><strong>Rekomendasi</strong><span>Menyampaikan hasil, prioritas tindak lanjut, dan opsi pengembangan selanjutnya.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="cta-wrap">
+          <div>
+            <h2>Punya rencana proyek energi?</h2>
+            <p>Ceritakan kebutuhan Anda. Kami dapat membantu melakukan screening awal dan menentukan analisis yang paling relevan untuk tahap proyek saat ini.</p>
+          </div>
+          <a class="btn" href="https://wa.me/628987587313?text=Halo%20IVANA%2C%20saya%20ingin%20mendiskusikan%20rencana%20proyek%20energi." target="_blank" rel="noopener">Mulai Konsultasi</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="kontak">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Kontak</div>
+          <h2>Hubungi IVANA.</h2>
+          <p>Untuk pertanyaan layanan, konsultasi awal, atau pembahasan kebutuhan proyek, silakan hubungi kami melalui WhatsApp.</p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-box">
+            <h3>Informasi Kontak</h3>
+            <div class="contact-list">
+              <div class="contact-item">
+                <div class="ci">📍</div>
+                <div>
+                  <strong>Alamat</strong>
+                  <span>Gatot Soebroto Kav. 18, Jakarta Selatan, DKI Jakarta, Indonesia</span>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="ci">💬</div>
+                <div>
+                  <strong>WhatsApp</strong>
+                  <a href="https://wa.me/628987587313" target="_blank" rel="noopener">+62 898-7587-313</a>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="ci">🕘</div>
+                <div>
+                  <strong>Jam Konsultasi</strong>
+                  <span>Senin–Jumat, 09.00–17.00 WIB</span>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="ci">🌐</div>
+                <div>
+                  <strong>Wilayah Layanan</strong>
+                  <span>Indonesia — konsultasi dapat dilakukan secara online maupun berdasarkan kebutuhan proyek.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-box">
+            <h3>Pertanyaan Umum</h3>
+            <div class="faq">
+              <details>
+                <summary>Apakah IVANA menerima konsultasi proyek yang masih tahap awal?</summary>
+                <p>Ya. IVANA dapat membantu pada tahap screening awal, termasuk identifikasi kebutuhan data, review peluang, dan penentuan studi lanjutan yang diperlukan.</p>
+              </details>
+              <details>
+                <summary>Apakah konsultasi dapat dilakukan secara online?</summary>
+                <p>Ya. Diskusi awal dan sebagian besar proses advisory dapat dilakukan secara online. Pertemuan atau kunjungan lapangan dapat disesuaikan dengan kebutuhan.</p>
+              </details>
+              <details>
+                <summary>Jenis proyek energi apa yang dapat dikonsultasikan?</summary>
+                <p>Ruang lingkup dapat mencakup pembangkit konvensional dan energi terbarukan seperti PLTS, PLTB, PLTA/PLTM, gas power, hybrid, serta energy storage.</p>
+              </details>
+              <details>
+                <summary>Bagaimana memulai konsultasi?</summary>
+                <p>Hubungi WhatsApp IVANA dan sampaikan ringkasan proyek, lokasi, kapasitas, serta kebutuhan analisis. Kami akan membantu mengarahkan ruang lingkup pembahasan awal.</p>
+              </details>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="legal" id="privacy">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Kebijakan</div>
+          <h2>Privasi dan ketentuan penggunaan.</h2>
+        </div>
+
+        <div class="legal-grid">
+          <div class="legal-card">
+            <h3>Privacy Policy</h3>
+            <p>
+              IVANA menghormati privasi pengguna. Informasi yang secara sukarela
+              dikirimkan melalui WhatsApp atau sarana komunikasi lain digunakan
+              hanya untuk menanggapi pertanyaan, memberikan layanan konsultasi,
+              dan menindaklanjuti kebutuhan bisnis yang disampaikan pengguna.
+            </p>
+            <p>
+              IVANA tidak menjual data pribadi pengguna kepada pihak lain. Data dapat
+              disimpan sejauh diperlukan untuk komunikasi bisnis, pemenuhan kewajiban
+              hukum, keamanan, dan administrasi layanan.
+            </p>
+            <p>
+              Dengan menghubungi IVANA melalui WhatsApp, pengguna memahami bahwa
+              komunikasi juga tunduk pada kebijakan dan ketentuan platform WhatsApp/Meta.
+            </p>
+          </div>
+
+          <div class="legal-card" id="terms">
+            <h3>Terms of Use</h3>
+            <p>
+              Informasi pada situs ini bersifat umum dan tidak otomatis merupakan
+              rekomendasi teknis, hukum, finansial, investasi, atau perizinan.
+              Ruang lingkup, metode, deliverable, dan asumsi untuk pekerjaan konsultasi
+              akan disepakati sesuai kebutuhan setiap proyek.
+            </p>
+            <p>
+              Pengguna bertanggung jawab memastikan data yang diberikan akurat serta
+              menggunakan hasil konsultasi sesuai tujuan yang telah disepakati.
+            </p>
+            <p>
+              Nama, identitas, alamat, dan informasi legal yang ditampilkan pada versi
+              publik situs harus disesuaikan dengan data bisnis yang benar dan dapat
+              diverifikasi.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <strong>IVANA</strong><br>
+        Energy Project & RUPTL Advisory<br>
+        Gatot Soebroto Kav. 18, Jakarta Selatan
+      </div>
+      <div class="footer-links">
+        <a href="#layanan">Layanan</a>
+        <a href="#tentang">Tentang</a>
+        <a href="#kontak">Kontak</a>
+        <a href="#privacy">Privacy Policy</a>
+        <a href="#terms">Terms</a>
+      </div>
+      <div>© <span id="year"></span> IVANA. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <a class="wa-float" href="https://wa.me/628987587313?text=Halo%20IVANA%2C%20saya%20ingin%20berkonsultasi." target="_blank" rel="noopener" aria-label="Hubungi IVANA melalui WhatsApp">✆</a>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.querySelectorAll('.nav-links a').forEach(a => {
+      a.addEventListener('click', () => document.querySelector('.nav-links').classList.remove('open'));
+    });
+  </script>
+</body>
+</html>
