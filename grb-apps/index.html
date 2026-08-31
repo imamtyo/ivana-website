@@ -311,12 +311,14 @@
   </footer>
 
   <script>
-    // Isi URL APK di sini setelah file diunggah ke GitHub Releases.
+    // Upload file APK ke folder grb-apps/files/ di server (nama file harus
+    // persis sama seperti di bawah ini), atau ganti nilainya dengan URL lain
+    // (mis. link GitHub Releases) kalau APK disimpan di tempat lain.
     // Kosongkan ("") apabila APK untuk aplikasi tersebut belum tersedia —
     // tombol akan otomatis menampilkan status "Segera Hadir".
     const APK_URLS = {
-      "jejak-kamera": "",
-      "my-cashflow-plus": ""
+      "jejak-kamera": "files/jejak-kamera.apk",
+      "my-cashflow-plus": "files/my-cashflow-plus.apk"
     };
 
     document.querySelectorAll(".app-actions").forEach(el => {
