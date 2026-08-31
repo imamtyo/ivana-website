@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Unduh aplikasi Android internal GRB." />
+  <meta name="robots" content="noindex, nofollow, noarchive" />
+  <meta name="googlebot" content="noindex, nofollow" />
+
+  <link rel="icon" type="image/svg+xml" href='data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"%3E%3Crect width="64" height="64" rx="16" fill="%230f766e"/%3E%3Cpath d="M14 47 25 15l8 21 8-15 10 26" fill="none" stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/%3E%3Cpath d="M15 47h34" stroke="white" stroke-width="6" stroke-linecap="round"/%3E%3C/svg%3E' />
+  <meta name="theme-color" content="#0f172a" />
+  <title>GRB Apps — Aplikasi Internal GRB</title>
+
+  <style>
+    :root{
+      --bg:#f8fafc;
+      --surface:#ffffff;
+      --surface-2:#f1f5f9;
+      --text:#0f172a;
+      --muted:#64748b;
+      --line:#e2e8f0;
+      --primary:#0f766e;
+      --primary-2:#14b8a6;
+      --accent:#0ea5e9;
+      --warn:#b45309;
+      --warn-bg:#fffbeb;
+      --warn-line:#fde68a;
+      --shadow:0 20px 55px rgba(15,23,42,.10);
+      --radius:22px;
+      --max:960px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.65;
+    }
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{width:min(calc(100% - 32px),var(--max));margin-inline:auto}
+
+    header{
+      background:
+        radial-gradient(circle at 12% 8%, rgba(20,184,166,.18), transparent 32%),
+        radial-gradient(circle at 88% 15%, rgba(14,165,233,.16), transparent 28%),
+        linear-gradient(180deg,#fff 0%,#f8fafc 100%);
+      padding:44px 0 34px;
+      border-bottom:1px solid var(--line);
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      font-weight:800;
+      letter-spacing:.02em;
+      margin-bottom:22px;
+    }
+    .brand-mark{
+      width:42px;height:42px;border-radius:13px;
+      display:grid;place-items:center;
+      color:#fff;
+      background:linear-gradient(135deg,var(--primary),var(--accent));
+      box-shadow:0 10px 25px rgba(14,116,144,.22);
+      font-size:19px;
+    }
+    .brand small{
+      display:block;
+      color:var(--muted);
+      font-size:10px;
+      font-weight:700;
+      letter-spacing:.12em;
+      margin-top:-2px;
+    }
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:7px 11px;
+      border-radius:999px;
+      color:#0f766e;
+      background:#ccfbf1;
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      margin-bottom:16px;
+    }
+    h1{
+      margin:0 0 12px;
+      font-size:clamp(30px,5vw,44px);
+      line-height:1.1;
+      letter-spacing:-.03em;
+    }
+    header p{
+      color:#475569;
+      font-size:16px;
+      max-width:640px;
+      margin:0;
+    }
+
+    main{padding:46px 0 70px}
+
+    .apps{display:grid;gap:20px}
+    .app-card{
+      background:var(--surface);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:28px;
+      display:grid;
+      grid-template-columns:64px 1fr auto;
+      gap:22px;
+      align-items:start;
+      box-shadow:var(--shadow);
+    }
+    .app-icon{
+      width:64px;height:64px;border-radius:18px;
+      display:grid;place-items:center;
+      font-size:30px;
+      background:linear-gradient(135deg,#ecfeff,#f0fdfa);
+      color:var(--primary);
+      border:1px solid var(--line);
+    }
+    .app-card h2{margin:0 0 6px;font-size:19px}
+    .app-meta{
+      display:flex;gap:10px;flex-wrap:wrap;
+      margin:0 0 12px;
+    }
+    .badge{
+      font-size:11px;
+      font-weight:700;
+      color:#0f766e;
+      background:#f0fdfa;
+      border:1px solid #ccfbf1;
+      padding:4px 9px;
+      border-radius:999px;
+    }
+    .app-card p.desc{margin:0 0 14px;color:var(--muted);font-size:14px}
+    .app-card ul{
+      margin:0;
+      padding-left:18px;
+      color:var(--muted);
+      font-size:13.5px;
+      display:grid;
+      gap:4px;
+    }
+    .app-actions{
+      display:flex;
+      flex-direction:column;
+      align-items:stretch;
+      gap:8px;
+      min-width:168px;
+    }
+    .btn{
+      border:none;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      padding:12px 16px;
+      border-radius:13px;
+      font-weight:700;
+      font-size:14px;
+      cursor:pointer;
+      transition:.2s ease;
+      white-space:nowrap;
+    }
+    .btn-primary{
+      color:white;
+      background:linear-gradient(135deg,var(--primary),#0d9488);
+      box-shadow:0 10px 28px rgba(15,118,110,.18);
+    }
+    .btn-primary:hover{transform:translateY(-1px);box-shadow:0 14px 30px rgba(15,118,110,.24)}
+    .btn-disabled{
+      background:var(--surface-2);
+      color:var(--muted);
+      border:1px solid var(--line);
+      cursor:not-allowed;
+      pointer-events:none;
+    }
+    .app-actions small{
+      text-align:center;
+      color:var(--muted);
+      font-size:11.5px;
+    }
+
+    .notice{
+      margin-top:28px;
+      background:var(--warn-bg);
+      border:1px solid var(--warn-line);
+      border-radius:18px;
+      padding:20px 22px;
+    }
+    .notice h3{
+      margin:0 0 8px;
+      font-size:14px;
+      color:var(--warn);
+      display:flex;align-items:center;gap:8px;
+    }
+    .notice ol{
+      margin:0;
+      padding-left:18px;
+      color:#78350f;
+      font-size:13.5px;
+      display:grid;
+      gap:5px;
+    }
+
+    footer{
+      padding:26px 0 40px;
+      color:var(--muted);
+      font-size:12.5px;
+      text-align:center;
+    }
+
+    @media(max-width:640px){
+      .app-card{grid-template-columns:1fr;}
+      .app-icon{width:52px;height:52px;font-size:24px;border-radius:14px}
+      .app-actions{min-width:0}
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <div class="brand">
+        <span class="brand-mark">GRB</span>
+        <span>GRB Apps<small>INTERNAL TOOLS</small></span>
+      </div>
+      <div class="eyebrow">Internal Only</div>
+      <h1>Aplikasi Android Internal GRB</h1>
+      <p>
+        Kumpulan aplikasi Android yang dikembangkan oleh tim GRB untuk mendukung
+        operasional dan pelaporan kegiatan. Unduh APK langsung dari daftar di bawah ini.
+        Halaman ini tidak diindeks mesin pencari — mohon jangan disebarluaskan di luar tim internal.
+      </p>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="apps">
+
+        <article class="app-card">
+          <div class="app-icon">📷</div>
+          <div>
+            <h2>Jejak Kamera</h2>
+            <div class="app-meta">
+              <span class="badge">Android</span>
+              <span class="badge">Dokumentasi Lapangan</span>
+            </div>
+            <p class="desc">
+              Aplikasi kamera dengan watermark otomatis berisi waktu dan koordinat GPS,
+              dirancang untuk kebutuhan dokumentasi dan pelaporan kegiatan di lapangan GRB.
+            </p>
+            <ul>
+              <li>Watermark waktu &amp; lokasi GPS otomatis pada setiap foto</li>
+              <li>Mempermudah verifikasi bukti kegiatan lapangan</li>
+              <li>Cocok untuk laporan dan dokumentasi kegiatan GRB</li>
+            </ul>
+          </div>
+          <div class="app-actions" data-app="jejak-kamera">
+            <a class="btn btn-primary" href="#" download>⬇ Download APK</a>
+            <small>Versi APK terbaru</small>
+          </div>
+        </article>
+
+        <article class="app-card">
+          <div class="app-icon">💵</div>
+          <div>
+            <h2>My Cashflow+</h2>
+            <div class="app-meta">
+              <span class="badge">Android</span>
+              <span class="badge">Perjalanan Dinas</span>
+            </div>
+            <p class="desc">
+              Aplikasi untuk mencatat pengeluaran persekot pada setiap kegiatan perjalanan
+              dinas, membantu tim GRB mengelola dan merekap penggunaan dana perjalanan.
+            </p>
+            <ul>
+              <li>Catat pengeluaran persekot per kegiatan perjalanan dinas</li>
+              <li>Rekap dan ringkasan penggunaan dana secara otomatis</li>
+              <li>Mempermudah pelaporan pertanggungjawaban perjalanan dinas</li>
+            </ul>
+          </div>
+          <div class="app-actions" data-app="my-cashflow-plus">
+            <a class="btn btn-primary" href="#" download>⬇ Download APK</a>
+            <small>Versi APK terbaru</small>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="notice">
+        <h3>⚠ Cara instal APK</h3>
+        <ol>
+          <li>Aplikasi ini didistribusikan langsung sebagai APK, bukan melalui Google Play Store.</li>
+          <li>Saat instalasi, Android akan meminta izin "Install unknown apps" — aktifkan izin tersebut khusus untuk browser/file manager yang digunakan untuk membuka APK ini.</li>
+          <li>Hanya unduh APK dari halaman internal resmi ini. Jangan bagikan tautan APK ke luar tim GRB.</li>
+        </ol>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      Halaman internal GRB &middot; tidak untuk disebarluaskan ke publik.
+    </div>
+  </footer>
+
+  <script>
+    // Nama file APK persis seperti yang ada di folder grb-apps/ ini.
+    // Kosongkan ("") apabila APK untuk aplikasi tersebut belum tersedia —
+    // tombol akan otomatis menampilkan status "Segera Hadir".
+    const APK_URLS = {
+      "jejak-kamera": "JejakKamera1.apk",
+      "my-cashflow-plus": "MyCashFlowPlus1.1.apk"
+    };
+
+    document.querySelectorAll(".app-actions").forEach(el => {
+      const key = el.dataset.app;
+      const url = APK_URLS[key];
+      const btn = el.querySelector("a");
+      if (url) {
+        btn.href = url;
+        btn.setAttribute("download", "");
+      } else {
+        btn.href = "#";
+        btn.removeAttribute("download");
+        btn.classList.remove("btn-primary");
+        btn.classList.add("btn-disabled");
+        btn.textContent = "Segera Hadir";
+        btn.addEventListener("click", e => e.preventDefault());
+      }
+    });
+  </script>
+</body>
+</html>
