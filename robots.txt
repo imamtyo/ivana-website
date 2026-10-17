@@ -1,5 +1,3 @@
 User-agent: *
 Allow: /
 Disallow: /grb-apps/
-Disallow: /login
-Disallow: /dashboard
